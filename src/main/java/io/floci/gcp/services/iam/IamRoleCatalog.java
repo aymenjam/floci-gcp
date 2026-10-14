@@ -19,6 +19,11 @@ public class IamRoleCatalog {
     private static final Set<String> OBJECT_CREATOR = Set.of(
             "storage.multipartUploads.abort", "storage.multipartUploads.create",
             "storage.multipartUploads.listParts", "storage.objects.create");
+    private static final Set<String> OBJECT_USER = Set.of(
+            "storage.multipartUploads.abort", "storage.multipartUploads.create",
+            "storage.multipartUploads.list", "storage.multipartUploads.listParts",
+            "storage.objects.get", "storage.objects.list", "storage.objects.create",
+            "storage.objects.delete", "storage.objects.update", "storage.objects.move", "storage.objects.restore");
     private static final Set<String> OBJECT_ADMIN = Set.of(
             "storage.multipartUploads.abort", "storage.multipartUploads.create",
             "storage.multipartUploads.list", "storage.multipartUploads.listParts",
@@ -38,6 +43,7 @@ public class IamRoleCatalog {
         this(Map.of(
                 "roles/storage.objectViewer", OBJECT_VIEWER,
                 "roles/storage.objectCreator", OBJECT_CREATOR,
+                "roles/storage.objectUser", OBJECT_USER,
                 "roles/storage.objectAdmin", OBJECT_ADMIN,
                 "roles/storage.admin", STORAGE_ADMIN));
     }
