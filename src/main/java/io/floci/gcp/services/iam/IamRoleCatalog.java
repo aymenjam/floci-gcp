@@ -19,6 +19,9 @@ public class IamRoleCatalog {
     private static final Set<String> OBJECT_CREATOR = Set.of(
             "storage.multipartUploads.abort", "storage.multipartUploads.create",
             "storage.multipartUploads.listParts", "storage.objects.create");
+    // Same permissions as OBJECT_ADMIN for now. In GCP, objectAdmin also has
+    // storage.objects.getIamPolicy, setIamPolicy, setRetention and overrideUnlockedRetention.
+    // floci does not check these yet. When it does, add them to OBJECT_ADMIN only.
     private static final Set<String> OBJECT_USER = Set.of(
             "storage.multipartUploads.abort", "storage.multipartUploads.create",
             "storage.multipartUploads.list", "storage.multipartUploads.listParts",
